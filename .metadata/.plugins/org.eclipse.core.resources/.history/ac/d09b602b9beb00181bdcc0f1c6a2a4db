@@ -1,0 +1,71 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JFrame;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import java.awt.event.*;
+
+public class LoanCalculator extends JFrame
+{
+	public LoanCalculator()
+	{
+		//6 row and 2 column
+		setLayout(new GridLayout(6,2,5,5));
+		
+		//row 1
+		add(new JLabel("Annual Interest Rate: "));
+		JTextField Air = new JTextField(15); 
+		add(Air);
+		
+		//row 2
+		add(new JLabel("Number of Years: "));
+		JTextField Noy = new JTextField(15); 
+		add(Noy);
+		
+		//row 3
+		add(new JLabel("Loan Amount: "));
+		JTextField La = new JTextField(15); 
+		add(La);
+		
+		//row 4
+		add(new JLabel("Monthly Payment: "));
+		JTextField Mp = new JTextField(15); 
+		add(Mp);
+		
+		
+		//row 5
+		add(new JLabel("Total Payment: "));
+		JTextField Tp = new JTextField(15); 
+		add(Tp);
+		
+		//row 6
+		add(new JLabel(""));
+		
+		JButton Calc = new JButton("Compute Payment");
+		add(Calc);
+		
+		ComputeListenerClass listener1 = new ComputeListenerClass();
+		Calc.addActionListener(listener1);
+		
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		LoanCalculator frame = new LoanCalculator();
+		frame.setTitle("Parth - Loan Clac - 300986134");
+		frame.setSize(350,300);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+
+	class ComputeListenerClass implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+}
